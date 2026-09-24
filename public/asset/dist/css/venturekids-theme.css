@@ -1,0 +1,621 @@
+/*
+ * VentureKids brand theme.
+ * Loaded after adminlte.min.css and style.css to override the legacy
+ * orange/AdminLTE palette with the VentureKids indigo/teal identity
+ * used on the login page, without touching the AdminLTE/Bootstrap/
+ * DataTables markup or JS that every backend/student/school view relies on.
+ */
+
+:root {
+    --vk-indigo: #4F46E5;
+    --vk-indigo-dark: #4338CA;
+    --vk-teal: #14B8A6;
+    --vk-blue: #2563EB;
+    --vk-light-blue: #38BDF8;
+    --vk-gradient: linear-gradient(135deg, #4F46E5 0%, #2563EB 55%, #14B8A6 100%);
+}
+
+body,
+.btn,
+.form-control,
+.card,
+.nav-link,
+.dropdown-menu,
+.modal-content {
+    font-family: 'Poppins', 'Source Sans Pro', -apple-system, BlinkMacSystemFont, sans-serif;
+}
+
+h1, h2, h3, h4, h5, h6,
+.card-title,
+.brand-text {
+    font-family: 'Quicksand', 'Poppins', sans-serif;
+}
+
+/* ---------- Sidebar ---------- */
+.orange-sidebar {
+    background: var(--vk-gradient) !important;
+}
+
+.NewVersionUpdateMenus .active {
+    background: rgba(255, 255, 255, 0.22) !important;
+    color: #fff !important;
+}
+
+.NewVersionUpdateMenus .nav-pills .nav-link:not(.active):hover {
+    color: #fff;
+    opacity: 0.85;
+}
+
+/* ---------- Header / topbar ---------- */
+.NewVershionHeader {
+    background: #ffffff;
+    border-bottom: 1px solid #eef0f6;
+}
+
+.NewVersionRightNav .nav-link {
+    color: var(--vk-indigo);
+}
+
+.NewVersionRightNav .nav-link:hover {
+    color: var(--vk-teal);
+}
+
+/* ---------- Buttons ---------- */
+.btn-orange,
+.bg-orange-work {
+    background: var(--vk-indigo) !important;
+    background-image: none !important;
+    border-color: var(--vk-indigo) !important;
+}
+
+.btn-orange:hover,
+.btn-orange:focus {
+    background: var(--vk-light-blue) !important;
+    background-image: none !important;
+    border-color: var(--vk-light-blue) !important;
+}
+
+.btn-orange-outline {
+    border-color: var(--vk-indigo) !important;
+    color: var(--vk-indigo) !important;
+}
+
+/*
+ * Several content/level cards use per-card rotating rainbow gradients
+ * (set via the `background` shorthand, incl. an orange/gold one) that
+ * only activate on hover — e.g. .for-loop-btn.fig-card ... :hover .btn.
+ * background-color alone can't beat a background-image set elsewhere,
+ * so these are matched explicitly and forced to the brand gradient.
+ */
+.for-loop-btn .btn.btn-primary,
+.for-loop-btn.fig-card .bg-b .levels.bg-white .ContentBody .view-button .btn.btn-primary,
+.malti-color-button-box,
+.ThemeBtnContent {
+    background: var(--vk-indigo) !important;
+    background-image: none !important;
+    border-color: var(--vk-indigo) !important;
+    color: #fff !important;
+}
+
+.for-loop-btn.fig-card .bg-b:hover .levels.bg-white .ContentBody .view-button .btn.btn-primary,
+.for-loop-btn.fig-card .bg-b .levels.bg-white:hover .ContentBody .view-button .btn.btn-primary,
+.malti-color-list .box:hover .malti-color-button-box,
+.malti-color-button-box:hover,
+.ThemeBtnContent:hover {
+    background: var(--vk-light-blue) !important;
+    background-image: none !important;
+    border-color: var(--vk-light-blue) !important;
+    color: #fff !important;
+    box-shadow: none !important;
+}
+
+.btn-orange-outline:hover {
+    background-color: var(--vk-light-blue) !important;
+    border-color: var(--vk-light-blue) !important;
+    color: #fff !important;
+}
+
+.btn-primary,
+.badge-primary,
+.bg-primary,
+.btn-warning,
+.badge-warning {
+    background-color: var(--vk-indigo) !important;
+    border-color: var(--vk-indigo) !important;
+    color: #fff !important;
+}
+
+.btn-primary:hover,
+.btn-primary:focus,
+.btn-warning:hover,
+.btn-warning:focus {
+    background-color: var(--vk-light-blue) !important;
+    border-color: var(--vk-light-blue) !important;
+    color: #fff !important;
+}
+
+.text-primary {
+    color: var(--vk-indigo) !important;
+}
+
+.btn,
+.form-control,
+.card,
+.modal-content,
+.dropdown-menu {
+    border-radius: 0.6rem;
+}
+
+/* ---------- Cards ---------- */
+.card {
+    box-shadow: 0 2px 10px rgba(17, 24, 39, 0.06);
+    border: 1px solid #f0f1f7;
+}
+
+/* ---------- Links ---------- */
+a {
+    color: var(--vk-indigo);
+}
+
+a:hover {
+    color: var(--vk-teal);
+}
+
+/* ---------- Form focus state ---------- */
+.form-control:focus {
+    border-color: var(--vk-indigo);
+    box-shadow: 0 0 0 3px rgba(79, 70, 229, 0.15);
+}
+
+/* ---------- Pagination / DataTables ---------- */
+.page-item.active .page-link,
+.dataTables_wrapper .paginate_button.current {
+    background-color: var(--vk-indigo) !important;
+    border-color: var(--vk-indigo) !important;
+    color: #fff !important;
+}
+
+/* ---------- Checkboxes / radios (iCheck, custom-control) ---------- */
+.custom-control-input:checked ~ .custom-control-label::before {
+    background-color: var(--vk-indigo) !important;
+    border-color: var(--vk-indigo) !important;
+}
+
+.icheck-primary > input:first-child:checked + label::before {
+    background-color: var(--vk-indigo) !important;
+    border-color: var(--vk-indigo) !important;
+}
+
+/* ---------- Tabs ---------- */
+.nav-tabs .nav-link.active {
+    color: var(--vk-indigo);
+    border-color: var(--vk-indigo) transparent transparent;
+}
+
+/* ---------- Class Schedule calendar (FullCalendar) ---------- */
+.fc {
+    --fc-button-bg-color: var(--vk-indigo);
+    --fc-button-border-color: var(--vk-indigo);
+    --fc-button-hover-bg-color: var(--vk-indigo-dark);
+    --fc-button-hover-border-color: var(--vk-indigo-dark);
+    --fc-button-active-bg-color: var(--vk-indigo-dark);
+    --fc-button-active-border-color: var(--vk-indigo-dark);
+}
+
+.fc-col-header-cell .fc-col-header-cell-cushion {
+    color: var(--vk-indigo) !important;
+}
+
+/* ---------- Student Assessment page ---------- */
+/* :not(.student-assessment-btn-start--active) so the green "ready to
+   start" state (a legitimate status color, not brand orange) is untouched. */
+.btn-start:not(.student-assessment-btn-start--active) {
+    background-color: #E8E7FB !important;
+    color: var(--vk-indigo) !important;
+}
+
+.btn-start:not(.student-assessment-btn-start--active):hover {
+    background-color: var(--vk-indigo) !important;
+    color: #fff !important;
+}
+
+.assessment-title .highlight {
+    color: var(--vk-indigo) !important;
+}
+
+/* ---------- Baseline / subjective / MCQ assessment quiz flow: Back/Start/Save ---------- */
+.sa-subj-back-btn,
+.sa-subj-start-btn,
+.sa-mcq-back-btn,
+.sa-mcq-start-btn {
+    background: var(--vk-indigo) !important;
+}
+
+.sa-subj-save-btn,
+.sa-mcq-save-btn {
+    background: var(--vk-indigo-dark) !important;
+}
+
+/* ---------- Summernote WYSIWYG editor toolbar (used across the admin content/event/assignment forms) ---------- */
+.note-toolbar {
+    background: var(--vk-gradient) !important;
+}
+
+/* ---------- Admin dashboard menu cards (Project Management, RealQ Assessment) ---------- */
+.realq-dashboard-card {
+    background: linear-gradient(135deg, #f7f6fe 0%, #ffffff 58%, #eef0fd 100%) !important;
+    border-color: rgba(79, 70, 229, 0.24) !important;
+}
+
+.realq-dashboard-card:hover {
+    border-color: rgba(79, 70, 229, 0.58) !important;
+}
+
+.realq-dashboard-card__icon {
+    background: var(--vk-indigo) !important;
+}
+
+.realq-dashboard-card__arrow {
+    color: var(--vk-indigo) !important;
+}
+
+/* ---------- Trainer content list: "available" dot moved inline next to the title ---------- */
+.TrainerContentBody .trainer-content-info .content-ninja-verified {
+    position: static !important;
+    display: inline-block !important;
+    top: auto !important;
+    right: auto !important;
+    margin-left: 8px !important;
+    vertical-align: middle !important;
+    font-size: 12px !important;
+}
+
+/* ---------- "Terms upgraded" notice on the Terms & Privacy Policy pages ---------- */
+/* Scoped to this specific static banner, not .alert-success globally, since that
+   class is also used for genuine session-success flash messages elsewhere. */
+.terms-updated-alert {
+    background-color: var(--vk-indigo) !important;
+    border-color: var(--vk-indigo-dark) !important;
+    color: #fff !important;
+}
+
+.terms-updated-alert .close {
+    color: #fff !important;
+    opacity: 0.8;
+}
+
+/* ---------- Sidebar collapse/toggle button (shared header, so this covers
+   admin, school, trainer, student, and partner in one place) ---------- */
+.toggleBar {
+    background: var(--vk-indigo) !important;
+}
+
+.toggleBar span {
+    background: #fff !important;
+}
+
+/* ---------- Admin dashboard stat cards (Schools / Trainers / Students) ---------- */
+/* Scoped to these specific cards rather than .bg-warning/.bg-info/.bg-success
+   globally, since those utility classes are reused elsewhere for genuine
+   semantic meaning (warnings, info, success confirmations). */
+.small-box.dashboard-stat-schools {
+    background-color: var(--vk-indigo) !important;
+}
+
+.small-box.dashboard-stat-trainers {
+    background-color: var(--vk-blue) !important;
+}
+
+.small-box.dashboard-stat-students {
+    background-color: var(--vk-teal) !important;
+}
+
+/* ---------- School List action column (Student List / Suspend / Edit) ---------- */
+/* Scoped to these specific buttons rather than .btn-secondary/.btn-success/.btn-info
+   globally, since those utility classes are reused elsewhere for genuine
+   semantic meaning. Eye (view) and trash (delete) buttons are left as-is —
+   view is already indigo via the global .btn-primary fix, and red delete
+   follows the universal danger convention kept everywhere else in the app. */
+.school-action-list-btn {
+    background-color: var(--vk-indigo) !important;
+    border-color: var(--vk-indigo) !important;
+}
+
+.school-action-suspend-btn {
+    background-color: var(--vk-teal) !important;
+    border-color: var(--vk-teal) !important;
+}
+
+.school-action-edit-btn {
+    background-color: var(--vk-light-blue) !important;
+    border-color: var(--vk-light-blue) !important;
+}
+
+/* ---------- Generic action-column buttons (Trainer List and other admin list
+   pages sharing the same suspend/edit pattern) ---------- */
+.action-suspend-btn {
+    background-color: var(--vk-teal) !important;
+    border-color: var(--vk-teal) !important;
+}
+
+.action-edit-btn {
+    background-color: var(--vk-light-blue) !important;
+    border-color: var(--vk-light-blue) !important;
+}
+
+/* ---------- Trainer/student content grade page (topic tab scroll arrows,
+   session "View Content" buttons, module cards, and Learning
+   Objective/Outcome of Session detail cards) ---------- */
+.topics-scroll-tab .scroll-arrow {
+    background: var(--vk-indigo) !important;
+}
+
+.topics-scroll-tab .scroll-arrow:hover {
+    background: var(--vk-indigo-dark) !important;
+    color: #fff !important;
+}
+
+.new_design_three_col.trainer_new li .detailsInfo .btn-sm {
+    background-color: var(--vk-indigo) !important;
+}
+
+/* Rotating module/session card backgrounds — a fresh on-brand pastel set
+   (indigo/teal/blue/violet/sky) instead of the old rainbow-ish palette, so
+   these read as distinct from other rotating-color features in the app
+   (marketplace cards, avatar colors, etc.) while staying within the theme. */
+.new_design_three_col.trainer_new li:nth-child(5n+1) {
+    background-color: #E0E7FF !important;
+}
+.new_design_three_col.trainer_new li:nth-child(5n+2) {
+    background-color: #CCFBF1 !important;
+}
+.new_design_three_col.trainer_new li:nth-child(5n+3) {
+    background-color: #DBEAFE !important;
+}
+.new_design_three_col.trainer_new li:nth-child(5n+4) {
+    background-color: #EDE9FE !important;
+}
+.new_design_three_col.trainer_new li:nth-child(5n+5) {
+    background-color: #E0F2FE !important;
+}
+
+.trainer-detail-odd-even .row .trainer-box:nth-child(odd) .description-info {
+    background-color: #F0F0FD !important;
+}
+.trainer-detail-odd-even .row .trainer-box:nth-child(even) .description-info {
+    background-color: #E6FBF7 !important;
+}
+
+/* ---------- Student event list loaders ---------- */
+.weekly-loader,
+.industry-loader {
+    color: var(--vk-indigo) !important;
+}
+
+/* ---------- Student dashboard: Subscription Activity tabs ---------- */
+.subscription-activity-tab .nav-tabs .nav-link.active {
+    background-color: var(--vk-indigo) !important;
+    color: #fff !important;
+}
+
+/* ---------- "Completion Rate" widget (shared across student dashboard,
+   trainer progress-report tabs, and backend progress report list) ---------- */
+.blue-bg {
+    background-color: var(--vk-blue) !important;
+}
+
+.yellow-bg {
+    background-color: var(--vk-teal) !important;
+}
+
+.InnerBox.orange_box {
+    background-color: var(--vk-indigo) !important;
+}
+
+.InnerBox.blue_box {
+    background-color: var(--vk-blue) !important;
+}
+
+.InnerBox.yellow_box {
+    background-color: var(--vk-teal) !important;
+}
+
+.InnerBox.orange_box .stud-dash-cnt-box,
+.InnerBox.blue_box .stud-dash-cnt-box,
+.InnerBox.yellow_box .stud-dash-cnt-box,
+.InnerBox.orange_box .CounterRaps span,
+.InnerBox.blue_box .CounterRaps span,
+.InnerBox.yellow_box .CounterRaps span,
+.InnerBox.orange_box .IconRaps i.fa,
+.InnerBox.blue_box .IconRaps i.fa,
+.InnerBox.yellow_box .IconRaps i.fa {
+    color: #fff !important;
+}
+
+/* ---------- Student dashboard: activity cards ---------- */
+/* Four distinct accent colors keep these quick-glance actions visually separate
+   while retaining the high-contrast white text and icons used by the theme. */
+.InnerBox.student-dashboard-card.student-dashboard-card--industry {
+    background-color: #7C3AED !important;
+}
+
+.InnerBox.student-dashboard-card.student-dashboard-card--projects {
+    background-color: #0284C7 !important;
+}
+
+.InnerBox.student-dashboard-card.student-dashboard-card--daily-challenges {
+    background-color: #059669 !important;
+}
+
+.InnerBox.student-dashboard-card.student-dashboard-card--affirmation {
+    background-color: #E11D48 !important;
+}
+
+.student-dashboard-card .stud-dash-cnt-box,
+.student-dashboard-card .CounterRaps span,
+.student-dashboard-card .IconRaps i.fa,
+.student-dashboard-card .CounterRaps .text-primary {
+    color: #fff !important;
+}
+
+/* ---------- School progress report: summary cards ---------- */
+/* A calm, distinct set for the school-level overview. These selectors are
+   intentionally scoped to this report so the student dashboard is unaffected. */
+.InnerBox.school-progress-summary-card.school-progress-summary-card--students {
+    background-color: #6366D9 !important;
+}
+
+.InnerBox.school-progress-summary-card.school-progress-summary-card--sessions {
+    background-color: #4F8FD9 !important;
+}
+
+.InnerBox.school-progress-summary-card.school-progress-summary-card--assignments {
+    background-color: #2BAF9F !important;
+}
+
+.InnerBox.school-progress-summary-card.school-progress-summary-card--industry {
+    background-color: #8A70C5 !important;
+}
+
+.InnerBox.school-progress-summary-card.school-progress-summary-card--projects {
+    background-color: #5A9BB6 !important;
+}
+
+.InnerBox.school-progress-summary-card.school-progress-summary-card--daily {
+    background-color: #57A77D !important;
+}
+
+.school-progress-summary-card .stud-dash-cnt-box,
+.school-progress-summary-card .CounterRaps span,
+.school-progress-summary-card .IconRaps i.fa {
+    color: #fff !important;
+}
+
+/* ---------- Page title bar (shared .pageTitle class, used across every module) ---------- */
+.pageTitle {
+    background: var(--vk-gradient) !important;
+}
+
+.pageTitle h1,
+.pageTitle h2 {
+    color: #fff !important;
+}
+
+.pageTitle .breadcrumb-item a {
+    color: #fff !important;
+    font-weight: 600;
+}
+
+.pageTitle .breadcrumb-item.active {
+    color: rgba(255, 255, 255, 0.75) !important;
+}
+
+.pageTitle .breadcrumb-item + .breadcrumb-item::before {
+    color: rgba(255, 255, 255, 0.6) !important;
+}
+
+/* ---------- My Marketplace page ---------- */
+.my-marketplace-page .mkt-products-icon {
+    background: #EEEDFB !important;
+    color: var(--vk-indigo) !important;
+}
+
+.my-marketplace-page .mkt-products-scroll-btn:hover {
+    background: var(--vk-indigo) !important;
+    color: #fff !important;
+}
+
+.my-marketplace-page .mkt-tab--active {
+    color: var(--vk-indigo) !important;
+    border-bottom-color: var(--vk-indigo) !important;
+}
+
+.my-marketplace-page .mkt-add-step--active strong {
+    color: var(--vk-indigo) !important;
+}
+
+.my-marketplace-page .mkt-add-step--active .mkt-add-step-num,
+.my-marketplace-page .mkt-form-field-num {
+    background: var(--vk-indigo) !important;
+    color: #fff !important;
+}
+
+.my-marketplace-page .mkt-btn-reset:hover {
+    border-color: var(--vk-indigo) !important;
+    color: var(--vk-indigo) !important;
+}
+
+.my-marketplace-page .mkt-dropzone:hover,
+.my-marketplace-page .mkt-dropzone--active {
+    border-color: var(--vk-indigo) !important;
+    background: #F5F5FD !important;
+}
+
+.my-marketplace-page .mkt-file-chip-icon-btn:hover {
+    color: var(--vk-indigo) !important;
+}
+
+.my-marketplace-page .mkt-empty-state i {
+    color: var(--vk-indigo) !important;
+}
+
+.my-marketplace-page .mkt-btn-save {
+    background: var(--vk-indigo) !important;
+    box-shadow: 0 6px 16px rgba(79, 70, 229, 0.35) !important;
+}
+
+/* ---------- Worksheet tabs (New / Submitted Worksheets) ---------- */
+.BeginnerTab .nav-link.active,
+.BeginnerTab.scroll-tab .nav-link.active,
+.scroll-tab.nav-tabs .nav-link.active,
+.scroll-tab.nav-tabs .nav-item.show .nav-link {
+    background-color: var(--vk-indigo) !important;
+    color: #fff !important;
+    border-color: var(--vk-indigo) !important;
+}
+
+/* ---------- Student dashboard: Badges panel + Mentor Call button ---------- */
+.bg_brick_orange {
+    background: var(--vk-gradient) !important;
+}
+
+.button-wrao a {
+    background-color: var(--vk-indigo) !important;
+    color: #fff !important;
+}
+
+.button-wrao a i {
+    background-color: #fff !important;
+    color: var(--vk-indigo) !important;
+}
+
+/* ---------- My Projects: "Start New Project" / "Work on Assigned Project" cards ---------- */
+.my-projects-page .mp-info-card--orange {
+    background: #EEF2FF !important;
+}
+
+.my-projects-page .mp-info-card--blue {
+    background: #ECFDF9 !important;
+}
+
+.my-projects-page .mp-info-icon--orange {
+    background: var(--vk-indigo) !important;
+}
+
+.my-projects-page .mp-info-icon--blue {
+    background: var(--vk-teal) !important;
+}
+
+/* ---------- My Workspace: AI tool cards ---------- */
+/* Replaces the legacy 4-color cycle (yellow/cyan/orange/purple, --c1..--c4)
+   with a 9-color VentureKids-tinted cycle so cards stay visually distinct
+   even with more than 4 in a row. */
+.malti-color-list .color-box:nth-child(9n+1) .box { background-color: #A5B4FC !important; }
+.malti-color-list .color-box:nth-child(9n+2) .box { background-color: #5EEAD4 !important; }
+.malti-color-list .color-box:nth-child(9n+3) .box { background-color: #93C5FD !important; }
+.malti-color-list .color-box:nth-child(9n+4) .box { background-color: #C4B5FD !important; }
+.malti-color-list .color-box:nth-child(9n+5) .box { background-color: #7DD3FC !important; }
+.malti-color-list .color-box:nth-child(9n+6) .box { background-color: #FCD34D !important; }
+.malti-color-list .color-box:nth-child(9n+7) .box { background-color: #FDA4AF !important; }
+.malti-color-list .color-box:nth-child(9n+8) .box { background-color: #6EE7B7 !important; }
+.malti-color-list .color-box:nth-child(9n+9) .box { background-color: #67E8F9 !important; }

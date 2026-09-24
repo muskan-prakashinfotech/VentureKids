@@ -1,0 +1,26 @@
+stages:
+  - deploy
+deploy:
+  stage: deploy
+  tags:
+    - psspl-runner
+  environment:
+    name: dev
+    url: https://member.venderkids.com
+  script:
+    - echo "Starting deployment for the venderkids project with prod branch"
+    - sudo chown ubuntu:ubuntu -R /var/www/html/memberKidspre
+    - cd /var/www/html/memberKidspre
+    - git status
+    - git pull origin prod
+    - echo "Installing composer dependencies if composer.json file is changed"
+    - composer install
+    - echo "Migrating database to latest version if any migration files are added"
+    - php artisan migrate --force
+    - php artisan optimize:clear
+    - sudo chown www-data:ubuntu -R /var/www/html/memberKidspre
+    - sudo chown ubuntu:gitlab-runner -R /var/www/html/memberKidspre/builds
+    - sudo chmod 775 -R /var/www/html/memberKidspre/builds
+    - echo "Goodbye!"
+  only:
+    - prod
